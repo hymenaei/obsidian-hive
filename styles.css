@@ -1,8 +1,199 @@
-/*
+:root {
+	--hive-controller-width: 240px;
+}
 
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
+.view-content::-webkit-scrollbar {
+	display: none;
+}
 
-If your plugin does not need CSS, delete this file.
+.hive-grid {
+	display: flex;
+}
 
-*/
+.hive-grid-column {
+	line-height: 0px;
+}
+
+.hive-grid-item img {
+	width: 100%;
+	height: auto;
+}
+
+.hive-controller {
+	z-index: 5;
+	border-radius: var(--radius-m);
+	position: fixed;
+	inset-inline-end: var(--size-4-3);
+	top: var(--size-4-3);
+	right: 12px;
+	top: 50px;
+	padding: 0;
+	background-color: var(--background-primary);
+	width: var(--hive-controller-width);
+	overflow: auto;
+}
+
+.hive-controller:not(.is-close) {
+	max-height: calc(100% - var(--size-4-4));
+	border: 1px solid var(--background-modifier-border);
+	box-shadow: var(--shadow-s);
+}
+
+.hive-controller.is-close {
+	min-width: inherit;
+	width: auto;
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: var(--size-2-3);
+}
+
+.hive-controller.is-close .hive-controller-button-container {
+	display: none;
+}
+
+.hive-controller-button-container {
+	display: flex;
+	margin-bottom: 6px;
+}
+
+.hive-controller-button-container button {
+	margin-top: 6px;
+}
+
+.hive-controller-button-container button:first-child {
+	margin-right: 5px;
+}
+
+
+.hive-controller .mod-cta {
+	width: 100%;
+}
+
+.hive-controller .setting-item {
+	padding: var(--size-2-3) 0;
+	border: none;
+}
+
+.hive-controller .setting-item .setting-item-info {
+	display: flex;
+	align-items: center;
+}
+
+.hive-controller .setting-item:first-of-type {
+	border-top: none;
+}
+
+.hive-controller .setting-item.mod-slider {
+	flex-direction: column;
+}
+
+.hive-controller .setting-item.mod-slider>* {
+	width: 100%;
+}
+
+.hive-controller .setting-item.mod-slider .setting-item-info {
+	margin-inline-end: 0;
+}
+
+.hive-controller .setting-item.mod-slider .setting-item-control {
+	padding-top: var(--size-4-3);
+}
+
+.hive-controller .setting-item.mod-toggle .setting-item-control {
+	padding-top: 0;
+}
+
+.hive-controller .setting-item.mod-search-setting .setting-item-info {
+	margin-inline-end: 0;
+}
+
+.hive-controller .setting-item-name {
+	font-size: var(--font-ui-small);
+}
+
+.hive-controller.is-close>.hive-controller-section {
+	display: none;
+}
+
+.hive-controller input[type='text'],
+.hive-controller input[type='range'] {
+	width: 100%;
+	font-size: var(--font-ui-small);
+}
+
+.hive-controller::-webkit-scrollbar,
+.hive-controller::-webkit-scrollbar-thumb {
+	display: none;
+}
+
+.clickable-icon.hive-controller-button.mod-open {
+	background-color: var(--background-primary) !important;
+}
+
+.hive-controller-button.mod-close {
+	position: absolute;
+	top: var(--size-4-2);
+	inset-inline-end: var(--size-4-2);
+	padding: var(--size-2-2);
+}
+
+.hive-controller.is-close .hive-controller-button.mod-close,
+.hive-controller:not(.is-close) .hive-controller-button.mod-open {
+	display: none;
+}
+
+.hive-controller:not(.is-close) .hive-controller-button.mod-close,
+.hive-controller.is-close .hive-controller-button.mod-open {
+	display: flex;
+}
+
+.hive-controller-button.mod-close {
+	z-index: 5;
+}
+
+.hive-controller-section-header {
+	font-weight: var(--font-semibold);
+	font-size: var(--font-ui-small);
+	color: var(--text-normal);
+}
+
+.hive-controller-section {
+	padding: var(--size-2-3) var(--size-4-3);
+	border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.hive-controller-section:last-child {
+	border-bottom: none;
+}
+
+.hive-controller-section:last-child .tree-item-children {
+	padding-bottom: var(--size-4-4);
+}
+
+.hive-controller-section>.tree-item-self {
+	padding-inline-start: var(--size-4-4);
+}
+
+.hive-controller-section .tree-item-children {
+	margin: 0;
+	padding: var(--size-4-1) 0;
+	border-inline-start: none;
+}
+
+.hive-controller-section.mod-display .setting-item:not(.mod-slider):last-child .setting-item-info {
+	display: none;
+}
+
+.tree-item-children-property {
+    padding-inline-start: var(--nav-item-children-padding-start, var(--nav-item-children-padding-left));
+    margin-inline-start: var(--nav-item-children-margin-start, var(--nav-item-children-margin-left));
+    border-inline-start: var(--nav-indentation-guide-width) solid var(--nav-indentation-guide-color);
+}
+
+.tree-item-self {
+    margin-bottom: 0px;
+}
+
+.mod-group {
+    height: 26px;
+}
